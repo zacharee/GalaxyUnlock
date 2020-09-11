@@ -89,7 +89,7 @@ fun MainContent() {
                 title = {
                     Text(stringResource(id = R.string.app_name))
                 },
-                backgroundColor = MaterialTheme.colors.secondary,
+                backgroundColor = MaterialTheme.colors.primary,
             )
             ConstraintLayout(
                 modifier = Modifier.padding(InnerPadding(16.dp))
@@ -128,7 +128,8 @@ fun MainContent() {
                         context.sendRequest()
                     },
                     modifier = Modifier.layoutId("request_unlock"),
-                    shape = RoundedCornerShape(8.dp)
+                    shape = RoundedCornerShape(8.dp),
+                    backgroundColor = MaterialTheme.colors.secondary
                 ) {
                     Icon(
                         asset = Icons.Filled.LockOpen,
@@ -208,7 +209,7 @@ fun FAQDialog(info: FAQItem, state: MutableState<Boolean>) {
                     },
                     backgroundColor = Color.Transparent,
                     elevation = 0.dp,
-                    border = BorderStroke(1.dp, MaterialTheme.colors.primary),
+                    border = BorderStroke(1.dp, MaterialTheme.colors.secondary),
                 ) {
                     Text(text = getString(android.R.string.ok))
                 }
@@ -221,7 +222,7 @@ fun FAQDialog(info: FAQItem, state: MutableState<Boolean>) {
                         },
                         backgroundColor = Color.Transparent,
                         elevation = 0.dp,
-                        border = BorderStroke(1.dp, MaterialTheme.colors.primary)
+                        border = BorderStroke(1.dp, MaterialTheme.colors.secondary)
                     ) {
                         Text(text = getString(info.button.buttonText))
                     }
