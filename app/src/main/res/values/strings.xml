@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">Galaxy US Bootloader unlock</string>
+
+    <string name="cost_title">What does it cost?</string>
+    <string name="cost_desc">The price depends on multiple factors, including your device model. It should be somewhere in the range of $100-$150 USD, though.</string>
+
+    <string name="supported_devices_title">What devices are supported?</string>
+    <string name="supported_devices_desc">In general, US S and Note devices from the 10th generation onwards are supported, e.g. the US Unlocked Galaxy S10e or the Verizon Galaxy Note20 Ultra.</string>
+
+    <string name="needed_info_title">What information do I need to provide?</string>
+    <string name="needed_info_desc">In order to unlock the bootloader, your device ID is needed, along with the model. This will be automatically retrieved for you when you tap the \"Request Unlock\" button.</string>
+    
+    <string name="refunds_title">Can I get a refund if something goes wrong?</string>
+    <string name="refunds_desc">Unfortunately not. Refunds aren\'t offered for this service.</string>
+    
+    <string name="needed_tools_title">What tools do I need for this?</string>
+    <string name="needed_tools_desc">The unlock occurs remotely, so you\'ll need access to a Windows machine. TeamViewer may also be required. A USB redirector tool will be sent to you to install.</string>
+    
+    <string name="permanence_title">Is this a permanent bootloader unlock?</string>
+    <string name="permanence_desc">Mostly. This unlock method writes a specially-signed token to your steady partition, which unlocks the bootloader. As long as you don\'t overwrite the steady partition with anything else, your bootloader will remain unlocked. This includes OTAs and other forms of updates.</string>
+
+    <string name="wait_time_title">How long do I need to wait?</string>
+    <string name="wait_time_desc">This isn\'t an automated process, so it may take up to a week from the time you send the request to when your bootloader is actually unlocked. The person who will be unlocking your device is generally available between 4PM and 12AM Beijing time.</string>
+
+    <string name="other_questions_title">I don\'t see my question here. What should I do?</string>
+    <string name="other_questions_desc">If you have a question and you don\'t see the answer here, come visit the Telegram group.</string>
+
+    <string name="request_unlock">Request Unlock</string>
+    <string name="telegram_group">Telegram</string>
+
+    <string name="unlock_email">elliwigy1@gmail.com</string>
+    <string name="unlock_email_subject">Device Unlock Request: %s</string>
+    <string name="unlock_email_content"><![CDATA[DEVICE UNLOCK REQUEST<br><br>Device Model: %1$s<br>Device ID: %2$s<br><br>Put any extra comments below this line:<br>==============================<br>\n]]></string>
+</resources>
