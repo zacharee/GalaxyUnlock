@@ -169,7 +169,7 @@ fun FAQDialogCard(info: FAQItem) {
             ) {
                 Row(
                     horizontalArrangement = Arrangement.Center,
-                    verticalGravity = Alignment.CenterVertically,
+                    verticalAlignment = Alignment.CenterVertically,
                     modifier = Modifier.fillMaxWidth()
                         .preferredHeight(32.dp),
                 ) {
