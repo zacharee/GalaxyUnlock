@@ -17,7 +17,7 @@
     <string name="needed_tools_desc">The unlock occurs remotely, so you\'ll need access to a Windows machine. TeamViewer may also be required. A USB redirector tool will be sent to you to install.</string>
     
     <string name="permanence_title">Is this a permanent bootloader unlock?</string>
-    <string name="permanence_desc">Mostly. This unlock method writes a specially-signed token to your steady partition, which unlocks the bootloader. As long as you don\'t overwrite the steady partition with anything else, your bootloader will remain unlocked. This includes OTAs and other forms of updates.</string>
+    <string name="permanence_desc">Mostly. This unlock method writes a specially-signed token to your steady partition, which unlocks the bootloader. As long as you don\'t overwrite the steady partition with anything else, your bootloader will remain unlocked. OTAs and stock firmware are safe to flash.</string>
 
     <string name="wait_time_title">How long do I need to wait?</string>
     <string name="wait_time_desc">This isn\'t an automated process, so it may take up to a week from the time you send the request to when your bootloader is actually unlocked. The person who will be unlocking your device is generally available between 4PM and 12AM Beijing time.</string>
