@@ -5,7 +5,7 @@
     <string name="cost_desc">The price depends on multiple factors, including your device model. Expect to pay up to $150 USD.</string>
 
     <string name="supported_devices_title">What devices are supported?</string>
-    <string name="supported_devices_desc">In general, US and Canadian S and Note devices from the 10th generation onwards are supported, e.g. the US Unlocked Galaxy S10e or the Verizon Galaxy Note20 Ultra.</string>
+    <string name="supported_devices_desc">Currently the US and Canadian variants of the following devices are supported: S10 series, S20 series, Note10 series, Note20 series, Z Fold2.</string>
 
     <string name="needed_info_title">What information do I need to provide?</string>
     <string name="needed_info_desc">In order to unlock the bootloader, your device ID is needed, along with the model. This will be automatically retrieved for you when you tap the \"Request Unlock\" button.</string>
