@@ -2,7 +2,6 @@ package tk.zwander.galaxyunlock
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.compose.animation.animateContentSize
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
@@ -10,20 +9,15 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LockOpen
-import androidx.compose.material.icons.filled.Warning
-import androidx.compose.material.icons.materialIcon
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.ImageAssetConfig
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.platform.ContextAmbient
 import androidx.compose.ui.platform.setContent
-import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
-import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.TextUnit
@@ -92,7 +86,7 @@ fun MainContent() {
                 backgroundColor = MaterialTheme.colors.primary,
             )
             ConstraintLayout(
-                modifier = Modifier.padding(InnerPadding(16.dp))
+                modifier = Modifier.padding(PaddingValues(16.dp))
                     .fillMaxHeight(),
                 constraintSet = ConstraintSet {
                     val listRef = createRefFor("faq_list")
