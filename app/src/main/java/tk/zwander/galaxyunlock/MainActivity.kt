@@ -151,15 +151,24 @@ fun MainContent() {
                     modifier = Modifier.layoutId("device_info"),
                 ) {
                     Text(
-                        textAlign = TextAlign.Center,
                         text = stringResource(id = R.string.device_id, formatArgs = arrayOf(deviceId)),
                         modifier = Modifier.weight(1f),
-                    )
-                    Text(
                         textAlign = TextAlign.Center,
-                        text = stringResource(id = R.string.device_model, formatArgs = arrayOf(deviceModel)),
-                        modifier = Modifier.weight(1f),
                     )
+
+                    Column(
+                        modifier = Modifier.weight(1f),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.device_model),
+                            textAlign = TextAlign.Center,
+                        )
+
+                        Text(
+                            text = coloredDeviceModel,
+                        )
+                    }
                 }
             }
         }

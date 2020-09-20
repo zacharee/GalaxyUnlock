@@ -29,7 +29,7 @@
     <string name="telegram_group">Telegram</string>
 
     <string name="device_id">Device ID (DID)\n%s</string>
-    <string name="device_model">Device Model\n%s</string>
+    <string name="device_model">Device Model</string>
 
     <string name="unlock_email">elliwigy1@gmail.com</string>
     <string name="unlock_email_subject">Device Unlock Request: %s</string>
