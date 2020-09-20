@@ -2,7 +2,7 @@
     <string name="app_name">Galaxy US Bootloader unlock</string>
 
     <string name="cost_title">What does it cost?</string>
-    <string name="cost_desc">The price depends on multiple factors, including your device model. It should be somewhere in the range of $100-$150 USD, though.</string>
+    <string name="cost_desc">The price depends on multiple factors, including your device model. Expect to pay up to $150 USD.</string>
 
     <string name="supported_devices_title">What devices are supported?</string>
     <string name="supported_devices_desc">In general, US S and Note devices from the 10th generation onwards are supported, e.g. the US Unlocked Galaxy S10e or the Verizon Galaxy Note20 Ultra.</string>
