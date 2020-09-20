@@ -150,11 +150,20 @@ fun MainContent() {
                 Row(
                     modifier = Modifier.layoutId("device_info"),
                 ) {
-                    Text(
-                        text = stringResource(id = R.string.device_id, formatArgs = arrayOf(deviceId)),
+                    Column(
                         modifier = Modifier.weight(1f),
-                        textAlign = TextAlign.Center,
-                    )
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.device_id),
+                            textAlign = TextAlign.Center,
+                        )
+
+                        Text(
+                            text = deviceId,
+                            textAlign = TextAlign.Center,
+                        )
+                    }
 
                     Column(
                         modifier = Modifier.weight(1f),
