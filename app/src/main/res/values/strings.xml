@@ -28,6 +28,9 @@
     <string name="request_unlock">Request Unlock</string>
     <string name="telegram_group">Telegram</string>
 
+    <string name="device_id">Device ID (DID)\n%s</string>
+    <string name="device_model">Device Model\n%s</string>
+
     <string name="unlock_email">elliwigy1@gmail.com</string>
     <string name="unlock_email_subject">Device Unlock Request: %s</string>
     <string name="unlock_email_content"><![CDATA[DEVICE UNLOCK REQUEST<br><br>Device Model: %1$s<br>Device ID: %2$s<br><br>Put any extra comments below this line:<br>==============================<br>\n]]></string>

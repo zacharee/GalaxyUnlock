@@ -20,6 +20,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -91,6 +92,7 @@ fun MainContent() {
                 constraintSet = ConstraintSet {
                     val listRef = createRefFor("faq_list")
                     val requestRef = createRefFor("request_unlock")
+                    val infoRef = createRefFor("device_info")
 
                     constrain(listRef) {
                         start.linkTo(parent.start)
@@ -103,6 +105,13 @@ fun MainContent() {
                         start.linkTo(parent.start)
                         end.linkTo(parent.end)
                         top.linkTo(listRef.bottom)
+                        bottom.linkTo(infoRef.top)
+                    }
+
+                    constrain(infoRef) {
+                        start.linkTo(parent.start)
+                        end.linkTo(parent.end)
+                        top.linkTo(requestRef.bottom)
                         bottom.linkTo(parent.bottom)
                     }
                 }
@@ -121,7 +130,8 @@ fun MainContent() {
                     onClick = {
                         context.sendRequest()
                     },
-                    modifier = Modifier.layoutId("request_unlock"),
+                    modifier = Modifier.layoutId("request_unlock")
+                        .padding(top = 8.dp, bottom = 8.dp),
                     shape = RoundedCornerShape(8.dp),
                     backgroundColor = MaterialTheme.colors.secondary
                 ) {
@@ -134,6 +144,21 @@ fun MainContent() {
                         text = getString(id = R.string.request_unlock),
                         fontSize = TextUnit.Companion.Sp(36),
                         modifier = Modifier.padding(8.dp),
+                    )
+                }
+
+                Row(
+                    modifier = Modifier.layoutId("device_info"),
+                ) {
+                    Text(
+                        textAlign = TextAlign.Center,
+                        text = stringResource(id = R.string.device_id, formatArgs = arrayOf(deviceId)),
+                        modifier = Modifier.weight(1f),
+                    )
+                    Text(
+                        textAlign = TextAlign.Center,
+                        text = stringResource(id = R.string.device_model, formatArgs = arrayOf(deviceModel)),
+                        modifier = Modifier.weight(1f),
                     )
                 }
             }
