@@ -10,7 +10,7 @@ android {
         applicationId "tk.zwander.galaxyunlock"
         minSdkVersion 28
         targetSdkVersion 29
-        versionCode 2
+        versionCode 3
         versionName versionCode.toString()
     }
 
