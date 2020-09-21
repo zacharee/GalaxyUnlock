@@ -328,6 +328,7 @@ fun FAQDialog(info: FAQItem, state: MutableState<Boolean>) {
                     Button(
                         onClick = {
                             context.launchUrl(info.button.buttonLink)
+                            state.value = false
                         },
                         backgroundColor = Color.Transparent,
                         elevation = 0.dp,
