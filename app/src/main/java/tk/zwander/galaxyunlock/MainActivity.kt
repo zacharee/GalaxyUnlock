@@ -51,6 +51,9 @@ class MainActivity : AppCompatActivity() {
 fun createFAQItems(): List<FAQItem> {
     return listOf(
         FAQItem(R.string.cost_title, R.string.cost_desc),
+        FAQItem(R.string.how_to_pay_title, R.string.how_to_pay_desc,
+            ButtonInfo(R.string.venmo_link, "https://venmo.com/")
+        ),
         FAQItem(R.string.supported_devices_title, R.string.supported_devices_desc),
         FAQItem(R.string.needed_info_title, R.string.needed_info_desc),
         FAQItem(R.string.refunds_title, R.string.refunds_desc),
@@ -58,7 +61,8 @@ fun createFAQItems(): List<FAQItem> {
         FAQItem(R.string.permanence_title, R.string.permanence_desc),
         FAQItem(R.string.wait_time_title, R.string.wait_time_desc),
         FAQItem(R.string.other_questions_title, R.string.other_questions_desc,
-            ButtonInfo(R.string.telegram_group, "https://t.me/joinchat/EkE57lDUTDaP4b9jDlE4-Q")),
+            ButtonInfo(R.string.telegram_group, "https://t.me/joinchat/EkE57lDUTDaP4b9jDlE4-Q")
+        ),
     )
 }
 
