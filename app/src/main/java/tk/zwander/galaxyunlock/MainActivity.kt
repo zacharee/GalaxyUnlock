@@ -2,6 +2,8 @@ package tk.zwander.galaxyunlock
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Patterns
+import android.widget.Toast
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
@@ -20,6 +22,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
@@ -130,10 +133,74 @@ fun MainContent() {
                 )
 
                 val context = ContextAmbient.current
+                val showVenmoEmailDialog = remember {
+                    mutableStateOf(false)
+                }
+                val enteredEmail = remember {
+                    mutableStateOf("")
+                }
+
+                if (showVenmoEmailDialog.value) {
+                    AlertDialog(
+                        onDismissRequest = {},
+                        title = {
+                            Text(
+                                getString(R.string.enter_venmo_email),
+                                style = TextStyle(
+                                    fontSize = 18.sp,
+                                    fontWeight = FontWeight.Bold,
+                                ),
+                            )
+                        },
+                        text = {
+                            TextField(
+                                value = enteredEmail.component1(),
+                                keyboardType = KeyboardType.Email,
+                                onValueChange = {
+                                    enteredEmail.value = it
+                                }
+                            )
+                        },
+                        confirmButton = {
+                            Button(
+                                onClick = {
+                                    if (Patterns.EMAIL_ADDRESS.matcher(enteredEmail.value).matches()) {
+                                        context.sendRequest(enteredEmail.value)
+                                        enteredEmail.value = ""
+                                        showVenmoEmailDialog.value = false
+                                    } else {
+                                        Toast.makeText(
+                                            context,
+                                            R.string.enter_venmo_email,
+                                            Toast.LENGTH_SHORT
+                                        ).show()
+                                    }
+                                },
+                                backgroundColor = Color.Transparent,
+                                elevation = 0.dp,
+                                border = BorderStroke(1.dp, MaterialTheme.colors.secondary),
+                            ) {
+                                Text(text = getString(android.R.string.ok))
+                            }
+                        },
+                        dismissButton = {
+                            Button(
+                                onClick = {
+                                    showVenmoEmailDialog.value = false
+                                },
+                                backgroundColor = Color.Transparent,
+                                elevation = 0.dp,
+                                border = BorderStroke(1.dp, MaterialTheme.colors.secondary)
+                            ) {
+                                Text(text = getString(id = android.R.string.cancel))
+                            }
+                        },
+                    )
+                }
 
                 Button(
                     onClick = {
-                        context.sendRequest()
+                        showVenmoEmailDialog.value = true
                     },
                     modifier = Modifier.layoutId("request_unlock")
                         .padding(top = 8.dp, bottom = 8.dp),

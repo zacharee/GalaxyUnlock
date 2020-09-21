@@ -73,13 +73,13 @@ val coloredDeviceModel: AnnotatedString
         }.toAnnotatedString()
     }
 
-fun Context.sendRequest() {
+fun Context.sendRequest(enteredEmail: String) {
     val intent = Intent(Intent.ACTION_SENDTO)
     intent.putExtra(Intent.EXTRA_SUBJECT, resources.getString(R.string.unlock_email_subject,
         deviceModel
     ))
     intent.putExtra(Intent.EXTRA_TEXT, resources.getString(R.string.unlock_email_content,
-        deviceModel, deviceId
+        deviceModel, deviceId, enteredEmail
     ))
     intent.data = Uri.parse("mailto:${resources.getString(R.string.unlock_email)}")
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
