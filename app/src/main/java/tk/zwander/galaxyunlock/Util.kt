@@ -47,24 +47,29 @@ val deviceModel: String
 val coloredDeviceModel: AnnotatedString
     get() {
         val model = deviceModel
-        val (baseModel, region) = stripRegion(model)
 
-        val isConfirmed = supportedModels.contains(baseModel)
-        val isSupportedRegion = supportedRegions.contains(region)
-        val isTooOld = checkIfModelTooOld(baseModel)
+        val color = if (model.startsWith("SM")) {
+            val (baseModel, region) = stripRegion(model)
 
-        val color = when {
-            isTooOld || !isSupportedRegion -> {
-                Color.Red
+            val isConfirmed = supportedModels.contains(baseModel)
+            val isSupportedRegion = supportedRegions.contains(region)
+            val isTooOld = checkIfModelTooOld(baseModel)
+
+            when {
+                isTooOld || !isSupportedRegion -> {
+                    Color.Red
+                }
+
+                isConfirmed -> {
+                    Color.Green
+                }
+
+                else -> {
+                    Color.Yellow
+                }
             }
-
-            isConfirmed -> {
-                Color.Green
-            }
-
-            else -> {
-                Color.Yellow
-            }
+        } else {
+            Color.Red
         }
 
         return AnnotatedString.Builder(deviceModel).apply {
