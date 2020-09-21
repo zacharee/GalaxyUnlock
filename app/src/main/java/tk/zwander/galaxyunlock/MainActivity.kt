@@ -54,6 +54,7 @@ fun createFAQItems(): List<FAQItem> {
         FAQItem(R.string.how_to_pay_title, R.string.how_to_pay_desc,
             ButtonInfo(R.string.venmo_link, "https://venmo.com/")
         ),
+        FAQItem(R.string.when_to_pay_title, R.string.when_to_pay_desc),
         FAQItem(R.string.supported_devices_title, R.string.supported_devices_desc),
         FAQItem(R.string.needed_info_title, R.string.needed_info_desc),
         FAQItem(R.string.refunds_title, R.string.refunds_desc),
