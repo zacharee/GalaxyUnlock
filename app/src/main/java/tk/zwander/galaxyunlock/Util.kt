@@ -3,6 +3,7 @@ package tk.zwander.galaxyunlock
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.SystemProperties
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
@@ -42,7 +43,9 @@ val deviceId: String
     get() = SystemProperties.get("ro.boot.em.did")
 
 val deviceModel: String
-    get() = SystemProperties.get("ro.boot.em.model")
+    get() = SystemProperties.get("ro.boot.em.model").run {
+        if (isBlank()) Build.MODEL else this
+    }
 
 val coloredDeviceModel: AnnotatedString
     get() {
@@ -72,9 +75,9 @@ val coloredDeviceModel: AnnotatedString
             Color.Red
         }
 
-        return AnnotatedString.Builder(deviceModel).apply {
-            addStyle(SpanStyle(color = color), 0, deviceModel.length)
-            addStyle(ParagraphStyle(textAlign = TextAlign.Center), 0, deviceModel.length)
+        return AnnotatedString.Builder(model).apply {
+            addStyle(SpanStyle(color = color), 0, model.length)
+            addStyle(ParagraphStyle(textAlign = TextAlign.Center), 0, model.length)
         }.toAnnotatedString()
     }
 
