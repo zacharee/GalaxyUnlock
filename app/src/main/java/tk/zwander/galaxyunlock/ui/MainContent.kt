@@ -18,6 +18,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -47,10 +48,8 @@ fun MainContent() {
 
             Column(
                 modifier = Modifier.padding(
-                    top = 8.dp,
                     start = 16.dp,
                     end = 16.dp,
-                    bottom = 4.dp
                 )
                     .weight(1f),
             ) {
@@ -65,7 +64,12 @@ fun MainContent() {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
-                    .background(MaterialTheme.colors.surface)
+                    .background(
+                        color = colorResource(id = R.color.colorBottomBar),
+                        shape = RoundedCornerShape(
+                            topLeft = 12.dp, topRight = 12.dp,
+                        )
+                    )
                     .padding(bottom = 16.dp),
             ) {
                 Button(
