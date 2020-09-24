@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.os.SystemProperties
+import android.text.Html
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.ParagraphStyle
@@ -83,13 +84,17 @@ val coloredDeviceModel: AnnotatedString
 
 fun Context.sendRequest(enteredEmail: String) {
     val intent = Intent(Intent.ACTION_SENDTO)
+    val text = resources.getString(R.string.unlock_email_content,
+        deviceModel, deviceId, enteredEmail
+    )
+
+    intent.data = Uri.parse("mailto:")
     intent.putExtra(Intent.EXTRA_SUBJECT, resources.getString(R.string.unlock_email_subject,
         deviceModel
     ))
-    intent.putExtra(Intent.EXTRA_TEXT, resources.getString(R.string.unlock_email_content,
-        deviceModel, deviceId, enteredEmail
-    ))
-    intent.data = Uri.parse("mailto:${resources.getString(R.string.unlock_email)}")
+    intent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(text, 0))
+    intent.putExtra(Intent.EXTRA_HTML_TEXT, text)
+    intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(resources.getString(R.string.unlock_email)))
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
     startActivity(intent)
