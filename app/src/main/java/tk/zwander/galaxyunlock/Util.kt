@@ -97,7 +97,7 @@ fun Context.sendRequest(enteredEmail: String) {
     intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(resources.getString(R.string.unlock_email)))
     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
-    startActivity(intent)
+    startActivity(Intent.createChooser(intent, resources.getText(R.string.email_chooser_msg)))
 }
 
 //Safely launch a URL.
