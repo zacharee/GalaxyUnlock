@@ -5,7 +5,7 @@
     <string name="cost_desc">The price depends on multiple factors, including your device model. Expect to pay up to $150 USD.</string>
 
     <string name="how_to_pay_title">How do I pay?</string>
-    <string name="how_to_pay_desc">Payments are currently only accepted through Venmo. All you need for a Venmo account is your email.</string>
+    <string name="how_to_pay_desc">Payments are currently only accepted through Venmo or Transferwise. Venmo is preferred, but if you can\'t create a Venmo account, then use Transferwise.</string>
 
     <string name="when_to_pay_title">When do I pay?</string>
     <string name="when_to_pay_desc">Please hold off on payment until a few hours before your unlock. You\'ll be prompted if needed.</string>
