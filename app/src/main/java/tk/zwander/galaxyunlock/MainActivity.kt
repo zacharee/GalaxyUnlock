@@ -70,11 +70,6 @@ fun createFAQItems(): List<FAQItem> {
     )
 }
 
-@Composable
-fun getString(id: Int): String {
-    return ContextAmbient.current.resources.getString(id)
-}
-
 @Preview
 @Composable
 fun Preview() {
@@ -135,7 +130,7 @@ fun MainContent() {
                         modifier = Modifier.padding(0.dp, 0.dp, 8.dp, 0.dp),
                     )
                     Text(
-                        text = getString(id = R.string.request_unlock),
+                        text = stringResource(id = R.string.request_unlock),
                         fontSize = 36.sp,
                         modifier = Modifier.padding(8.dp),
                     )
@@ -203,7 +198,7 @@ fun FAQDialogCard(info: FAQItem) {
                         .preferredHeight(32.dp),
                 ) {
                     Text(
-                        text = AnnotatedString(getString(info.title)),
+                        text = AnnotatedString(stringResource(info.title)),
                     )
                 }
             }
@@ -224,12 +219,12 @@ fun FAQDialog(info: FAQItem, state: MutableState<Boolean>) {
             },
             title = {
                 Text(
-                    getString(info.title),
+                    stringResource(info.title),
                     style = TextStyle(fontSize = 18.sp, fontWeight = FontWeight.Bold)
                 )
             },
             text = {
-                Text(AnnotatedString(getString(info.desc)))
+                Text(AnnotatedString(stringResource(info.desc)))
             },
             confirmButton = {
                 Button(
@@ -240,7 +235,7 @@ fun FAQDialog(info: FAQItem, state: MutableState<Boolean>) {
                     elevation = 0.dp,
                     border = BorderStroke(1.dp, MaterialTheme.colors.secondary),
                 ) {
-                    Text(text = getString(android.R.string.ok))
+                    Text(text = stringResource(android.R.string.ok))
                 }
             },
             dismissButton = {
@@ -254,7 +249,7 @@ fun FAQDialog(info: FAQItem, state: MutableState<Boolean>) {
                         elevation = 0.dp,
                         border = BorderStroke(1.dp, MaterialTheme.colors.secondary)
                     ) {
-                        Text(text = getString(info.button.buttonText))
+                        Text(text = stringResource(info.button.buttonText))
                     }
                 }
             }
@@ -274,7 +269,7 @@ fun VenmoDialog(showVenmoEmailDialog: MutableState<Boolean>) {
             onDismissRequest = {},
             title = {
                 Text(
-                    getString(R.string.enter_venmo_email),
+                    stringResource(R.string.enter_venmo_email),
                     style = TextStyle(
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Bold,
@@ -313,7 +308,7 @@ fun VenmoDialog(showVenmoEmailDialog: MutableState<Boolean>) {
                     elevation = 0.dp,
                     border = BorderStroke(1.dp, MaterialTheme.colors.secondary),
                 ) {
-                    Text(text = getString(android.R.string.ok))
+                    Text(text = stringResource(android.R.string.ok))
                 }
             },
             dismissButton = {
@@ -325,7 +320,7 @@ fun VenmoDialog(showVenmoEmailDialog: MutableState<Boolean>) {
                     elevation = 0.dp,
                     border = BorderStroke(1.dp, MaterialTheme.colors.secondary)
                 ) {
-                    Text(text = getString(id = android.R.string.cancel))
+                    Text(text = stringResource(id = android.R.string.cancel))
                 }
             },
         )
