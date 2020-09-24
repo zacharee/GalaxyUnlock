@@ -116,7 +116,9 @@ fun MainContent() {
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = Modifier.background(MaterialTheme.colors.surface),
+                modifier = Modifier
+                    .background(MaterialTheme.colors.surface)
+                    .padding(bottom = 16.dp),
             ) {
                 Button(
                     onClick = {
