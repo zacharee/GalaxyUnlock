@@ -11,6 +11,8 @@ import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.ParagraphStyle
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.style.TextAlign
+import tk.zwander.galaxyunlock.data.ButtonInfo
+import tk.zwander.galaxyunlock.data.FAQItem
 
 val supportedModels = arrayOf(
     "SM-G970",
@@ -81,6 +83,28 @@ val coloredDeviceModel: AnnotatedString
             addStyle(ParagraphStyle(textAlign = TextAlign.Center), 0, model.length)
         }.toAnnotatedString()
     }
+
+fun createFAQItems(): List<FAQItem> {
+    return listOf(
+        FAQItem(R.string.cost_title, R.string.cost_desc),
+        FAQItem(
+            R.string.how_to_pay_title, R.string.how_to_pay_desc,
+            ButtonInfo(R.string.venmo_link, "https://venmo.com/")
+        ),
+        FAQItem(R.string.when_to_pay_title, R.string.when_to_pay_desc),
+        FAQItem(R.string.supported_devices_title, R.string.supported_devices_desc),
+        FAQItem(R.string.needed_info_title, R.string.needed_info_desc),
+        FAQItem(R.string.refunds_title, R.string.refunds_desc),
+        FAQItem(R.string.needed_tools_title, R.string.needed_tools_desc),
+        FAQItem(R.string.permanence_title, R.string.permanence_desc),
+        FAQItem(R.string.void_warranty_title, R.string.void_warranty_desc),
+        FAQItem(R.string.wait_time_title, R.string.wait_time_desc),
+        FAQItem(
+            R.string.other_questions_title, R.string.other_questions_desc,
+            ButtonInfo(R.string.telegram_group, "https://t.me/joinchat/EkE57lDUTDaP4b9jDlE4-Q")
+        ),
+    )
+}
 
 fun Context.sendRequest(enteredEmail: String) {
     val intent = Intent(Intent.ACTION_SENDTO)
