@@ -34,7 +34,9 @@
     <string name="request_unlock">Request Unlock</string>
     <string name="telegram_group">Telegram</string>
     <string name="venmo_link">Venmo</string>
-    <string name="enter_venmo_email">Please enter your Venmo email</string>
+    <string name="enter_valid_email_msg">Please enter a valid email address.</string>
+    <string name="enter_venmo_email">Please enter your Venmo email.</string>
+    <string name="enter_venmo_email_desc">If you can\'t use Venmo, enter any email address.</string>
 
     <string name="device_id">Device ID (DID)</string>
     <string name="device_model">Device Model</string>

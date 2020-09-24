@@ -279,13 +279,17 @@ fun VenmoDialog(showVenmoEmailDialog: MutableState<Boolean>) {
                 )
             },
             text = {
-                TextField(
-                    value = enteredEmail.component1(),
-                    keyboardType = KeyboardType.Email,
-                    onValueChange = {
-                        enteredEmail.value = it
-                    }
-                )
+                Column {
+                    Text(text = stringResource(id = R.string.enter_venmo_email_desc))
+                    Spacer(modifier = Modifier.height(8.dp))
+                    TextField(
+                        value = enteredEmail.component1(),
+                        keyboardType = KeyboardType.Email,
+                        onValueChange = {
+                            enteredEmail.value = it
+                        }
+                    )
+                }
             },
             confirmButton = {
                 Button(
@@ -297,7 +301,7 @@ fun VenmoDialog(showVenmoEmailDialog: MutableState<Boolean>) {
                         } else {
                             Toast.makeText(
                                 context,
-                                R.string.enter_venmo_email,
+                                R.string.enter_valid_email_msg,
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
