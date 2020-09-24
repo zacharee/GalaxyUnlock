@@ -61,6 +61,7 @@ fun createFAQItems(): List<FAQItem> {
         FAQItem(R.string.refunds_title, R.string.refunds_desc),
         FAQItem(R.string.needed_tools_title, R.string.needed_tools_desc),
         FAQItem(R.string.permanence_title, R.string.permanence_desc),
+        FAQItem(R.string.void_warranty_title, R.string.void_warranty_desc),
         FAQItem(R.string.wait_time_title, R.string.wait_time_desc),
         FAQItem(
             R.string.other_questions_title, R.string.other_questions_desc,

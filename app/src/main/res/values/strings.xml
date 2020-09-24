@@ -28,6 +28,9 @@
     <string name="wait_time_title">How long do I need to wait?</string>
     <string name="wait_time_desc">This isn\'t an automated process, so it may take up to a week from the time you send the request to when your bootloader is actually unlocked. The person who will be unlocking your device is generally available between 4PM and 12AM Beijing time.</string>
 
+    <string name="void_warranty_title">Will this void my warranty?</string>
+    <string name="void_warranty_desc">At least in the US, it shouldn\'t. However, if Samsung sees that your device is rooted, they will try to claim that the warranty is void. If you fight them enough, they may concede and accept a warranty repair. But that isn\'t guaranteed.</string>
+
     <string name="other_questions_title">I don\'t see my question here. What should I do?</string>
     <string name="other_questions_desc">If you have a question and you don\'t see the answer here, come visit the Telegram group.</string>
 
