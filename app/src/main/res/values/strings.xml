@@ -2,7 +2,7 @@
     <string name="app_name">Galaxy US/CA Bootloader unlock</string>
 
     <string name="cost_title">What does it cost?</string>
-    <string name="cost_desc">The price depends on multiple factors, including your device model. Expect to pay up to $150 USD.</string>
+    <string name="cost_desc">The price depends on multiple factors, including your device model. You\'ll be given a quote after you request an unlock.</string>
 
     <string name="how_to_pay_title">How do I pay?</string>
     <string name="how_to_pay_desc">Payments are currently only accepted through Venmo or Transferwise. Venmo is preferred, but if you can\'t create a Venmo account, then use Transferwise.</string>
