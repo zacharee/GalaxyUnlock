@@ -14,29 +14,21 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.LockOpen
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.ContextAmbient
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.android.material.composethemeadapter.MdcTheme
-import tk.zwander.galaxyunlock.R
-import tk.zwander.galaxyunlock.coloredDeviceModel
-import tk.zwander.galaxyunlock.createFAQItems
-import tk.zwander.galaxyunlock.deviceId
+import tk.zwander.galaxyunlock.*
 
 @Composable
 fun MainContent() {
     MdcTheme(setTextColors = true) {
-        val showVenmoEmailDialog = remember {
-            mutableStateOf(false)
-        }
-
-        VenmoDialog(showVenmoEmailDialog)
+        val context = ContextAmbient.current
 
         Column {
             TopAppBar(
@@ -54,7 +46,7 @@ fun MainContent() {
                     .weight(1f),
             ) {
                 LazyColumnFor(
-                    items = createFAQItems(),
+                    items = context.createFAQItems(),
                     itemContent = { item ->
                         FAQDialogCard(info = item)
                     },
@@ -74,7 +66,7 @@ fun MainContent() {
             ) {
                 Button(
                     onClick = {
-                        showVenmoEmailDialog.value = true
+                        context.launchUrl(context.resources.getString(R.string.discord_group_link))
                     },
                     modifier = Modifier.padding(top = 8.dp, bottom = 8.dp),
                     shape = RoundedCornerShape(8.dp),

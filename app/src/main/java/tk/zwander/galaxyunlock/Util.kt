@@ -84,7 +84,7 @@ val coloredDeviceModel: AnnotatedString
         }.toAnnotatedString()
     }
 
-fun createFAQItems(): List<FAQItem> {
+fun Context.createFAQItems(): List<FAQItem> {
     return listOf(
         FAQItem(R.string.cost_title, R.string.cost_desc),
         FAQItem(
@@ -101,27 +101,9 @@ fun createFAQItems(): List<FAQItem> {
         FAQItem(R.string.wait_time_title, R.string.wait_time_desc),
         FAQItem(
             R.string.other_questions_title, R.string.other_questions_desc,
-            ButtonInfo(R.string.telegram_group, "https://t.me/joinchat/EkE57lDUTDaP4b9jDlE4-Q")
+            ButtonInfo(R.string.discord_group, resources.getString(R.string.discord_group_link))
         ),
     )
-}
-
-fun Context.sendRequest(enteredEmail: String) {
-    val intent = Intent(Intent.ACTION_SENDTO)
-    val text = resources.getString(R.string.unlock_email_content,
-        deviceModel, deviceId, enteredEmail
-    )
-
-    intent.data = Uri.parse("mailto:")
-    intent.putExtra(Intent.EXTRA_SUBJECT, resources.getString(R.string.unlock_email_subject,
-        deviceModel
-    ))
-    intent.putExtra(Intent.EXTRA_TEXT, Html.fromHtml(text, 0))
-    intent.putExtra(Intent.EXTRA_HTML_TEXT, text)
-    intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(resources.getString(R.string.unlock_email)))
-    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-
-    startActivity(Intent.createChooser(intent, resources.getText(R.string.email_chooser_msg)))
 }
 
 //Safely launch a URL.

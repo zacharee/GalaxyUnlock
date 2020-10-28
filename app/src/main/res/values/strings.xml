@@ -32,15 +32,17 @@
     <string name="void_warranty_desc">At least in the US, it shouldn\'t. However, if Samsung sees that your device is rooted, they will try to claim that the warranty is void. If you fight them enough, they may concede and accept a warranty repair. But that isn\'t guaranteed.</string>
 
     <string name="other_questions_title">I don\'t see my question here. What should I do?</string>
-    <string name="other_questions_desc">If you have a question and you don\'t see the answer here, come visit the Telegram group.</string>
+    <string name="other_questions_desc">If you have a question and you don\'t see the answer here, come visit the Discord group.</string>
 
     <string name="request_unlock">Request Unlock</string>
-    <string name="telegram_group">Telegram</string>
+    <string name="discord_group">Discord</string>
     <string name="venmo_link">Venmo</string>
     <string name="enter_valid_email_msg">Please enter a valid email address.</string>
     <string name="enter_venmo_email">Please enter your Venmo email.</string>
     <string name="enter_venmo_email_desc">If you can\'t use Venmo, enter any email address.</string>
     <string name="email_chooser_msg">Pick an email app.</string>
+
+    <string name="discord_group_link">https://discord.gg/gHzj2xN</string>
 
     <string name="device_id">Device ID (DID)</string>
     <string name="device_model">Device Model</string>
